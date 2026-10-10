@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Retos del Curso de Fundamentos de JavaScript",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest --watch",

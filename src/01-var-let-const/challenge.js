@@ -9,7 +9,8 @@
 // Declara una constante llamada PI con el valor 3.14159
 // y retórnala.
 function obtenerPI() {
-  // Tu código aquí
+  const PI = 3.14159;
+  return PI;
 }
 
 // --- Reto 2: Reasignación con let ---
@@ -17,14 +18,17 @@ function obtenerPI() {
 // Luego reasígnala a 5.
 // Retorna el valor final de contador.
 function obtenerContador() {
-  // Tu código aquí
+  let contador = 0;
+  contador = 5;
+  return contador;
 }
 
 // --- Reto 3: Constante de texto ---
 // Declara una constante llamada NOMBRE_CURSO con el valor
 // "Fundamentos de JavaScript" y retórnala.
 function obtenerNombreCurso() {
-  // Tu código aquí
+  const NOMBRE_CURSO = "Fundamentos de JavaScript";
+  return NOMBRE_CURSO;
 }
 
 // --- Reto 4: Reasignación de strings ---
@@ -34,7 +38,11 @@ function obtenerNombreCurso() {
 //   { inicial: "hola", final: "adiós" }
 // Pista: guarda el valor inicial antes de reasignar.
 function reasignarMensaje() {
-  // Tu código aquí
+  let mensaje = "hola";
+  const inicial = mensaje;
+  mensaje = "adiós";
+  const final = mensaje;
+  return { inicial, final };
 }
 
 // --- Reto 5: Cálculo con const y let ---
@@ -44,7 +52,11 @@ function reasignarMensaje() {
 // Calcula el total como: precioBase - descuento.
 // Retorna un objeto: { precioBase, descuento, total }
 function calcularTotal() {
-  // Tu código aquí
+  const precioBase = 100;
+  let descuento = 10;
+  descuento = 25;
+  const total = precioBase - descuento;
+  return { precioBase, descuento, total };
 }
 
 // --- Reto 6: Identificar tipos de dato ---
@@ -56,9 +68,9 @@ function identificarTipos() {
   const activo = true;
 
   return {
-    tipoEdad: undefined, // Reemplaza undefined por typeof de edad
-    tipoNombre: undefined, // Reemplaza undefined por typeof de nombre
-    tipoActivo: undefined, // Reemplaza undefined por typeof de activo
+    tipoEdad: typeof edad,
+    tipoNombre: typeof nombre,
+    tipoActivo: typeof activo,
   };
 }
 
@@ -69,11 +81,10 @@ function identificarTipos() {
 //   { antes: undefined, despues: "Oscar" }
 // Pista: declara "nombre" con var después del primer acceso.
 function demostrarHoisting() {
-  // Tu código aquí
-  // Paso 1: guarda el valor de "nombre" en una variable "antes"
-  // Paso 2: declara var nombre = "Oscar"
-  // Paso 3: guarda el valor de "nombre" en una variable "despues"
-  // Paso 4: retorna { antes, despues }
+  const antes = nombre; // nombre es undefined debido al hoisting
+  var nombre = "Oscar";
+  const despues = nombre;
+  return { antes, despues };
 }
 
 module.exports = {
