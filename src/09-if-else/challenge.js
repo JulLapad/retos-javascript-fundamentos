@@ -10,15 +10,30 @@
 // Recibe "edad" (número). Retorna true si edad >= 18, false en caso contrario.
 // Usa if y else (o solo return de una comparación).
 function esMayorDeEdad(edad) {
-  // Tu código aquí
+  if(edad >= 18){
+    return true;
+  } else {
+    return false;
+  }
 }
+
+console.log (esMayorDeEdad(17)); // False
+console.log (esMayorDeEdad(19)); // True
 
 // --- Reto 2: Mensaje según condición ---
 // Recibe "edad" (número). Si edad >= 18 retorna 'eres mayor de edad',
 // si no, retorna 'eres menor de edad'. Usa if y else con return.
 function mensajeEdad(edad) {
-  // Tu código aquí
+  if(edad >= 18){
+    return 'eres mayor de edad';
+  } else {
+    return 'eres menor de edad';
+  }
 }
+
+console.log (mensajeEdad(17)); // eres mayor de edad
+console.log (mensajeEdad(19)); // eres menor de edad
+
 
 // --- Reto 3: else if para caso exacto ---
 // Recibe "edad" (número). Retorna:
@@ -27,15 +42,32 @@ function mensajeEdad(edad) {
 // - 'eres menor de edad' en cualquier otro caso
 // Usa if, else if y else. Prioriza la condición más restrictiva primero.
 function mensajeEdadDetallado(edad) {
-  // Tu código aquí
+  if(edad >= 19){
+    return 'eres mayor de edad';
+  }  else if (edad === 18) {
+    return 'Tienes dieciocho años';
+  } else {
+    return 'eres menor de edad';
+  }
 }
+
+console.log (mensajeEdadDetallado(17)); // eres mayor de edad
+console.log (mensajeEdadDetallado(18)); // Tienes dieciocho años
+console.log (mensajeEdadDetallado(19)); // eres menor de edad
 
 // --- Reto 4: Validar umbral con >= ---
 // Recibe "valor" (número) y "minimo" (número).
 // Retorna true si valor >= minimo, false en caso contrario.
 function cumpleMinimo(valor, minimo) {
-  // Tu código aquí
+  if (valor >= minimo){
+    return true
+  } else{
+    return false
+  }
 }
+
+console.log (cumpleMinimo (15, 20)) // False
+console.log (cumpleMinimo (25, 20)) // True
 
 // --- Reto 5: Nivel de acceso por edad ---
 // Recibe "edad" (número). Retorna un string según el rango:
@@ -44,16 +76,36 @@ function cumpleMinimo(valor, minimo) {
 // - 'menor' si edad < 18
 // Usa if, else if y else con comparaciones (>=, ===, <).
 function nivelAcceso(edad) {
-  // Tu código aquí
+  if(edad >= 19){
+    return 'adulto';
+  }  else if (edad === 18) {
+    return 'dieciocho';
+  } else {
+    return 'menor';
+  }
 }
+
+console.log (nivelAcceso(17)); // menor
+console.log (nivelAcceso(18)); // dieciocho
+console.log (nivelAcceso(19)); // adulto
 
 // --- Reto 6: Acceso con condición (edad o permiso) ---
 // Recibe "edad" (número) y "tienePermisoEspecial" (booleano).
 // Retorna true si la persona puede entrar: ya sea edad >= 18 O tiene permiso especial.
 // Retorna false en caso contrario.
 function puedeEntrar(edad, tienePermisoEspecial) {
-  // Tu código aquí
+  if(edad >= 18){
+    return true;
+  }  else if (tienePermisoEspecial) {
+    return true;
+  } else {
+    return false;
+  }
 }
+
+console.log (puedeEntrar(17)); // false
+console.log (puedeEntrar(18)); // true
+console.log (puedeEntrar(19)); // true
 
 module.exports = {
   esMayorDeEdad,
