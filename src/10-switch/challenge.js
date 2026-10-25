@@ -12,8 +12,24 @@
 // "día no válido" para cualquier otro valor.
 // Usa switch agrupando los casos que comparten la misma acción (sin repetir código).
 function tipoDeDia(dia) {
-  // Tu código aquí
+  switch (dia) {
+    case 'lunes':
+    case 'martes':
+    case 'miercoles':
+    case 'jueves':
+    case 'viernes':
+        return ('día laboral');
+    case 'sabado':
+    case 'domingo':
+        return('fin de semana');
+    default:
+        return('día no válido');
+  }
 }
+
+console.log(tipoDeDia('jueves')); // Día Laboral
+console.log(tipoDeDia('sabado')); // Fin de semana
+console.log(tipoDeDia('Who is json?')); // Día no válido
 
 // --- Reto 2: Mensaje según opción ---
 // Recibe "opcion" (string: "a", "b" o "c").
