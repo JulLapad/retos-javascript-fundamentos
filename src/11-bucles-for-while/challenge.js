@@ -10,15 +10,29 @@
 // Recibe "n" (número). Usa un bucle for con let i = 0; i < n; i++.
 // Retorna un array con los números de 0 hasta n - 1 (ej: n = 5 → [0, 1, 2, 3, 4]).
 function numerosHastaN(n) {
-  // Tu código aquí
+  const resultado = [];
+  for (let i = 0; i < n; i++) {
+    resultado.push(i);
+  }
+  return resultado;
 }
+
+console.log(numerosHastaN(100));
 
 // --- Reto 2: while mientras se cumpla condición ---
 // Recibe "limite" (número). Usa un bucle while: un contador empieza en 0
 // y se incrementa mientras sea menor que limite. Retorna el valor del contador al terminar.
 function contarConWhile(limite) {
-  // Tu código aquí
+  let contador = 0;
+  while(contador < limite) {
+    contador++;
+  }
+  return contador;
 }
+
+console.log(contarConWhile(100));
+console.log(contarConWhile(50));
+
 
 // --- Reto 3: do-while (al menos una ejecución) ---
 // Recibe "limite" (número). Usa do-while: un contador empieza en 0,
