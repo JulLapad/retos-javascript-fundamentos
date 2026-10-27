@@ -15,11 +15,11 @@ function tipoDeDia(dia) {
   switch (dia) {
     case 'lunes':
     case 'martes':
-    case 'miercoles':
+    case 'miércoles':
     case 'jueves':
     case 'viernes':
-        return ('día laboral');
-    case 'sabado':
+        return ("día laboral");
+    case 'sábado':
     case 'domingo':
         return('fin de semana');
     default:
@@ -37,8 +37,21 @@ console.log(tipoDeDia('Who is json?')); // Día no válido
 // Si no coincide con ninguno, retorna "opción no válida" (usa default).
 // Usa switch con break en cada case para que no se ejecute el siguiente.
 function mensajeOpcion(opcion) {
-  // Tu código aquí
+  switch (opcion) {
+    case "a":
+      return 'Opción A';
+    case "b":
+      return 'Opción B';
+    case "c":
+      return 'Opción C';
+    default:
+      return 'opción no válida';
+  }
 }
+
+console.log(mensajeOpcion('c')); // Opción C
+console.log(mensajeOpcion('Who is json?')); // opción no válida
+
 
 // --- Reto 3: Categoría por código ---
 // Recibe "codigo" (string: "E1", "E2", "H1").
@@ -47,8 +60,22 @@ function mensajeOpcion(opcion) {
 // Retorna "desconocido" para cualquier otro (default).
 // Practica agrupar varios case que comparten la misma acción.
 function categoriaPorCodigo(codigo) {
-  // Tu código aquí
+  switch (codigo) {
+    case "E1":
+    case "E2":
+      return 'electrónica';
+    break
+    case "H1":
+      return 'hogar';
+      break
+    default:
+      return 'desconocido';
+  }
 }
+
+console.log(categoriaPorCodigo('E1')); // electrónica
+console.log(categoriaPorCodigo('Who is json?')); // desconocido
+
 
 // --- Reto 4: Días del mes ---
 // Recibe "mes" (número del 1 al 12).
@@ -57,8 +84,31 @@ function categoriaPorCodigo(codigo) {
 // Retorna 0 si el mes no es válido (default).
 // Usa switch agrupando los meses que tienen los mismos días.
 function diasDelMes(mes) {
-  // Tu código aquí
+  switch (mes){
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
+      return 31;
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+      return 30;
+    case 2:
+      return 28;
+    default:
+      return 0;
+  }
 }
+
+console.log(diasDelMes(1)); // 31
+console.log(diasDelMes(4)); // 30
+console.log(diasDelMes(2)); // 28
+console.log(diasDelMes('Who is json?')); // 0
 
 // --- Reto 5: Nivel de usuario ---
 // Recibe "nivel" (string: "principiante", "intermedio", "avanzado").
@@ -66,8 +116,20 @@ function diasDelMes(mes) {
 // "acceso completo" para avanzado.
 // Retorna "nivel no válido" para cualquier otro valor (default).
 function nivelDeUsuario(nivel) {
-  // Tu código aquí
+  switch (nivel) {
+    case "principiante":
+      return "acceso básico";
+    case "intermedio":
+      return "acceso estándar";
+    case "avanzado":
+      return "acceso completo";
+    default:
+    return  "nivel no válido";
+  }
 }
+
+console.log(nivelDeUsuario("principiante")); // acceso básico
+console.log(nivelDeUsuario('Who is json?')); // nivel no válido
 
 module.exports = {
   tipoDeDia,
