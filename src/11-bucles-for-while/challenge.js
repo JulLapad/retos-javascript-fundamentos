@@ -30,8 +30,10 @@ function contarConWhile(limite) {
   return contador;
 }
 
-console.log(contarConWhile(100));
-console.log(contarConWhile(50));
+console.log(contarConWhile(5));  // 5
+console.log(contarConWhile(1));  // 1
+console.log(contarConWhile(0));  // 0
+console.log(contarConWhile(-3)); // 0
 
 
 // --- Reto 3: do-while (al menos una ejecución) ---
@@ -39,32 +41,73 @@ console.log(contarConWhile(50));
 // en el do lo incrementas y en el while repites mientras contador < limite.
 // Así se ejecuta al menos una vez antes de validar. Retorna el contador al terminar.
 function contarConDoWhile(limite) {
-  // Tu código aquí
+  let contador = 0
+  do{
+    contador++;
+  } while(contador < limite);
+  return contador;
 }
+
+console.log(contarConDoWhile(1));  // 1
+console.log(contarConDoWhile(5));  // 5
+console.log(contarConDoWhile(0));  // 1
+console.log(contarConDoWhile(-3)); // 1
+
 
 // --- Reto 4: for con length e índice (array) ---
 // Recibe "notas" (array de strings). Usa for con i desde 0 hasta notas.length.
 // Retorna un array de strings con el formato "Índice: i -> Nota: valor" para cada elemento.
 // Usa template literals y acceso por índice notas[i].
 function formatearNotasConFor(notas) {
-  // Tu código aquí
+  const resultado = [];
+  for (let i = 0; i < notas.length; i++) {
+    resultado.push(`Índice: ${i } -> Nota: ${notas[i]}`);
+  }
+  return resultado;
 }
+
+//const notas = [4.5, 3.8, 5];
+
+//console.log(formatearNotasConFor(notas));
 
 // --- Reto 5: for...of y condición ---
 // Recibe "frutas" (array de strings). Usa for...of para iterar cada valor.
 // Si encuentras el string 'manzana', retorna true. Si terminas el bucle sin encontrarla, retorna false.
 // Puedes usar if dentro del bucle para decidir.
 function tieneManzana(frutas) {
-  // Tu código aquí
+  for(const fruta of frutas) {
+    if (fruta === "manzana") {
+        return true;
+    }
+  }
+  return false;
 }
+
+console.log(tieneManzana(["pera", "manzana", "uva"])); // true
+console.log(tieneManzana(["pera", "uva"]));            // false
+console.log(tieneManzana([]));                         // false
+console.log(tieneManzana(["Manzana", "uva"]));         // false
 
 // --- Reto 6: for...in para objeto (clave-valor) ---
 // Recibe "objeto" (un objeto con pares clave-valor). Usa for...in para recorrer sus claves.
 // Retorna un array de strings con el formato "Clave: clave -> Valor: valor" para cada propiedad.
 // Accede al valor con notación de corchetes: objeto[clave]. Usa template literals.
 function clavesYValores(objeto) {
-  // Tu código aquí
+  const resultado = [];
+  for (const clave in objeto) {
+    resultado.push(`Clave: ${clave} -> Valor: ${objeto[clave]}`);
+  }
+  return resultado;
 }
+
+//const estudiante = {
+//  nombre: "Ana",
+//  edad: 20,
+//  curso: "JavaScript"
+//};
+
+// console.log(clavesYValores(estudiante));
+
 
 module.exports = {
   numerosHastaN,
