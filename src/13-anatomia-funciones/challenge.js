@@ -10,8 +10,10 @@
 // Recibe "nombre" (string). Retorna un string con template literal: "Hola, {nombre}".
 // Ejemplo: saludar('Óscar') → "Hola, Óscar"
 function saludar(nombre) {
-  // Tu código aquí
+  return `Hola, ${nombre}`;
 }
+
+console.log(saludar('Jul_Lapad'));
 
 // --- Reto 2: Función que crea un objeto usuario (parámetros y retorno) ---
 // Recibe "nombre" (string) y "edad" (número). Retorna un objeto { nombre, edad }.
