@@ -8,15 +8,18 @@
 // --- Reto 1: Acceso a variable global ---
 // Declara una variable global llamada "mensajeGlobal" con el valor "Hola mundo"
 // y retórnala desde la función.
+const mensajeGlobal = "Hola mundo";
+
 function accederGlobal() {
-  // Tu código aquí
+  return mensajeGlobal;
 }
 
 // --- Reto 2: Scope de función ---
 // Dentro de la función, declara una variable local "secreto" con el valor "1234"
 // y retorna un objeto que tenga acceso a la variable local.
 function scopeFuncion() {
-  // Tu código aquí
+  const secreto = "1234"
+  return {secreto};
 }
 
 // --- Reto 3: Scope de bloque ---
