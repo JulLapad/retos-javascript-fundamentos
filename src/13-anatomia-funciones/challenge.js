@@ -20,23 +20,35 @@ console.log(saludar('Jul_Lapad'));
 // Los parámetros son las variables; los argumentos son los valores al invocar.
 // Ejemplo: crearUsuario('Ana', 25) → { nombre: 'Ana', edad: 25 }
 function crearUsuario(nombre, edad) {
-  // Tu código aquí
+  return { nombre, 
+    edad,
+   };
 }
+
+console.log (crearUsuario('Ana', 25)); // { nombre: 'Ana', edad: 25 }
 
 // --- Reto 3: Arrow function con retorno implícito ---
 // Recibe "a" y "b" (números). Retorna a * b (equivalente a una arrow de una línea: (a, b) => a * b).
 // Ejemplo: multiplicar(4, 5) → 20
 function multiplicar(a, b) {
-  // Tu código aquí
+  return a * b;
 }
+
+console.log (multiplicar(4, 5)); //20
 
 // --- Reto 4: Arrow function con parámetro por defecto y Date.now() ---
 // Recibe "contenido" (string) y "titulo" (string, opcional, por defecto 'sin título').
 // Retorna un objeto { titulo, contenido, creado } donde creado = Date.now() (número en ms).
 // Ejemplo: crearNota('Mi contenido') → { titulo: 'sin título', contenido: 'Mi contenido', creado: 1234567890123 }
-function crearNota(contenido, titulo) {
-  // Tu código aquí
+function crearNota(contenido, titulo = 'sin título') {
+  return { titulo, 
+    contenido, 
+    creado: Date.now() 
+  };
 }
+
+console.log (crearNota('Mi contenido')); //{ titulo: 'sin título', contenido: 'Mi contenido', creado: 1793876701152}
+  
 
 module.exports = {
   saludar,
